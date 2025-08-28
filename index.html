@@ -2,67 +2,62 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darmowe 100 Robuxów!</title>
+<title>Darmowe Robuxy</title>
 <style>
   body { 
     margin: 0; 
     background: black; 
     display: flex; 
-    flex-direction: column;
-    justify-content:center; 
-    align-items:center; 
-    height:100vh; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
     color: white; 
-    font-family: Arial, sans-serif;
+    font-family: sans-serif; 
     text-align: center;
   }
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: limegreen;
-    text-shadow: 0 0 10px #00ff00;
+  #scare { 
+    display: none; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
   }
   #start { 
+    font-size: 2em; 
     padding: 20px 40px; 
-    font-size: 1.5rem; 
-    background: limegreen; 
-    color: black; 
     border: none; 
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #00ff00;
+    border-radius: 15px; 
+    background: limegreen; 
+    color: white; 
+    cursor: pointer; 
   }
-  #start:active {
-    transform: scale(0.95);
-  }
-  #scare { 
-    display:none; 
-    position:absolute; 
-    width:100%; 
-    height:100%; 
-    top:0; 
-    left:0; 
-    object-fit: cover;
+  footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.8em;
+    color: gray;
   }
 </style>
 </head>
 <body>
   <h1>Darmowe 100 Robuxów!</h1>
   <button id="start">Kliknij tutaj!</button>
-  <img id="scare" src="https://i.imgur.com/FGrYqLv.jpg" alt="Jumpscare">
+  <img id="scare" src="https://i.imgur.com/FGrYqLv.jpeg" alt="Jumpscare">
   <audio id="sound" src="https://www.myinstants.com/media/sounds/scream.mp3"></audio>
+
+  <footer>Wykonane przez ogurras</footer>
 
 <script>
 document.getElementById("start").onclick = function() {
   document.getElementById("start").style.display = "none";
-  document.querySelector("h1").style.display = "none";
   const scare = document.getElementById("scare");
   const sound = document.getElementById("sound");
   setTimeout(() => {
     scare.style.display = "block";
     sound.play();
-  }, 2000); // 2 sekundy napięcia
+  }, 2000);
 };
 </script>
 </body>
